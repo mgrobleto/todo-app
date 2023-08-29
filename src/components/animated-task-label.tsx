@@ -86,7 +86,7 @@ const AnimatedTaskLabel: React.FC<Props> = memo(({strikethrough, textColor, inac
                     position='absolute' 
                     h={1} 
                     borderBottomWidth={1} 
-                    style={strikethroughAnimatedStyles}
+                    style={[strikethroughAnimatedStyles]}
                 />
             </AnimatedHStack>
         </Pressable>
