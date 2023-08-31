@@ -1,5 +1,4 @@
 import React, {useCallback} from 'react'
-//import { Pressable } from 'react-native'
 import { Box, HStack, useColorModeValue, useToken, Pressable, Icon, Input } from 'native-base'
 import AnimatedCheckbox from 'react-native-checkbox-reanimated'
 import AnimatedTaskLabel from './animated-task-label'
@@ -8,6 +7,7 @@ import { Feather } from '@expo/vector-icons'
 import { PanGestureHandlerProps } from 'react-native-gesture-handler'
 import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native'
 
+// Pick<Types, keys> we select the keys we wish to Pick from the Type
 interface Props extends Pick<PanGestureHandlerProps, 'simultaneousHandlers'>{
     isDone: boolean,
     isEditing: boolean,
@@ -19,12 +19,25 @@ interface Props extends Pick<PanGestureHandlerProps, 'simultaneousHandlers'>{
     subject: string
 }
 
-const TaskItem : React.FC<Props> = ({isDone, isEditing ,onToggleCheckbox, onChangeSubject, onRemove, onFinishEditing, onPressLabel, simultaneousHandlers, subject}) => {
+const TaskItem : React.FC<Props> = ({
+    isDone, 
+    isEditing ,
+    onToggleCheckbox, 
+    onChangeSubject, 
+    onRemove, 
+    onFinishEditing, 
+    onPressLabel, 
+    simultaneousHandlers, 
+    subject
+}) => {
 
+    // styles
+    
     const highlightColor = useToken(
         'colors',
         useColorModeValue('blue.500', 'blue.400')
     )
+
     const boxStroke = useToken(
         'colors',
         useColorModeValue('muted.300', 'muted.500')
