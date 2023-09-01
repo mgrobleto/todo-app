@@ -118,7 +118,7 @@ const TaskList : React.FC<TaskListProps> = ({
     const refScrollView = useRef(null)
 
     return(
-        <StyledScrollView ref={refScrollView} w='full'>
+        <StyledScrollView ref={refScrollView} w="full">
             <AnimatePresence>
                 {data.map(item => (
                     <AnimatedTaskItem 

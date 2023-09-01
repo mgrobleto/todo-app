@@ -32,7 +32,7 @@ const TaskItem : React.FC<Props> = ({
 }) => {
 
     // styles
-    
+
     const highlightColor = useToken(
         'colors',
         useColorModeValue('blue.500', 'blue.400')
@@ -68,11 +68,11 @@ const TaskItem : React.FC<Props> = ({
             backView={
                 <Box
                     w='full'
-                    h='full'
+                    h='10' //aaaaaa 
                     bg='red.500'
                     alignItems='flex-end'
                     justifyContent='center'
-                    pr={4}
+                    px={4}
                 >
                     <Icon color='white' as={<Feather name='trash-2' />} size='sm'/>
                 </Box>
@@ -85,7 +85,7 @@ const TaskItem : React.FC<Props> = ({
                 py={2}
                 bg={useColorModeValue('warmGray.50', 'primary.900')} 
             >    
-                <Box width={30} height={30} mr={2}>
+                <Box width={30} height={30} mx={2}>
                     <Pressable onPress={onToggleCheckbox}>
                         <AnimatedCheckbox highlightColor={highlightColor} checkmarkColor={checkmarkColor} boxOutlineColor={boxStroke} checked={isDone}/>
                     </Pressable>
@@ -114,7 +114,6 @@ const TaskItem : React.FC<Props> = ({
                         {subject}
                     </AnimatedTaskLabel>
                 )}
-                
             </HStack>
         </SwipeView>
     )

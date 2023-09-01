@@ -60,7 +60,7 @@ const AnimatedTaskLabel: React.FC<Props> = memo(({strikethrough, textColor, inac
 
     useEffect(() => {
         const easing = Easing.out(Easing.quad)
-        if(strikethrough) {
+        if(strikethrough) { //if the task is checked
             hstackOffset.value = withSequence(
                 withTiming(4, {duration: 200, easing}),
                 withTiming(0, {duration: 200, easing})

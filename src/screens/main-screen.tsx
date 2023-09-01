@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from 'react'
 import { Text,Box, Center, VStack, useColorModeValue, Pressable, Fab, Icon} from 'native-base'
 import { AntDesign } from '@expo/vector-icons'
-import ThemeToggle from '../components/theme-toggle'
-import TaskItem from '../components/task-item'
+import AnimatedColorBox from '../components/animated-color-box'
 import shortid from 'shortid' // for creating iDs
 import TaskList from '../components/task-list'
+import MastHead from '../components/masthead'
+import NavBar from '../components/navbar'
 
 const initialData = [
     {
@@ -64,11 +65,27 @@ const MainScreen = () => {
     }, [])
 
     return (
-        <Center _dark={{ bg: 'blueGray.900'}} _light={{bg: 'blueGray.50'}} flex={1}>
-            <VStack 
-                space={5} 
-                alignItems='center' 
-                w='full'> 
+        <AnimatedColorBox
+            w='full'
+            flex={1}
+            bg={useColorModeValue('warmGray.50', 'primary.900')}
+        >
+            <MastHead
+                title="What's up, Gabriela"
+                color='white'
+                image={require('../assets/masthead.png')}
+            >
+                <NavBar />
+            </MastHead>
+            <VStack
+                flex={1}
+                space={1}
+                bg={useColorModeValue('warmGray.50', 'primary.900')}
+                mt='-20px'
+                borderTopLeftRadius='20px'
+                borderTopRightRadius='20px'
+                pt='20px'
+                > 
                 <TaskList
                     data={data}
                     editingItemId={editingItemId}
@@ -78,7 +95,6 @@ const MainScreen = () => {
                     onPressLabel={handlePressTaskItemLabel}
                     onRemoveItem={handleRemoveItem}
                 />
-                <ThemeToggle />
             </VStack>
             <Fab 
                 position='absolute' 
@@ -99,7 +115,7 @@ const MainScreen = () => {
                     setEditingItemId(id)
                 }}
             />
-        </Center>
+        </AnimatedColorBox>
     )
 }
 
