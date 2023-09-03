@@ -1,6 +1,7 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useState} from 'react'
 import { Box, HStack, useColorModeValue, useToken, Pressable, Icon, Input } from 'native-base'
 import AnimatedCheckbox from 'react-native-checkbox-reanimated'
+import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import AnimatedTaskLabel from './animated-task-label'
 import SwipeView from './swipable-view'
 import { Feather } from '@expo/vector-icons'
@@ -30,6 +31,8 @@ const TaskItem : React.FC<Props> = ({
     simultaneousHandlers, 
     subject
 }) => {
+
+    const [isPressed, setIsPressed] = useState(false)
 
     // styles
 
@@ -85,9 +88,9 @@ const TaskItem : React.FC<Props> = ({
                 py={2}
                 bg={useColorModeValue('warmGray.50', 'primary.900')} 
             >    
-                <Box width={30} height={30} mx={2}>
+                <Box width={30} height={30} mx={2} justifyContent='center'>
                     <Pressable onPress={onToggleCheckbox}>
-                        <AnimatedCheckbox highlightColor={highlightColor} checkmarkColor={checkmarkColor} boxOutlineColor={boxStroke} checked={isDone}/>
+                        <BouncyCheckbox onPress={(isChecked : boolean) => setIsPressed(isChecked)} />
                     </Pressable>
                 </Box>
                 {isEditing ? (
@@ -108,7 +111,7 @@ const TaskItem : React.FC<Props> = ({
                     <AnimatedTaskLabel 
                         textColor={activeTextColor} 
                         inactiveTextColor={doneTextColor} 
-                        strikethrough={isDone}
+                        strikethrough={isPressed}
                         onPress={onPressLabel}
                     >
                         {subject}
