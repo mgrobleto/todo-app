@@ -2,14 +2,13 @@
   To-Do / Task Manager App with React Native
 </p>
 
-![phone3](https://github.com/user-attachments/assets/9b87b1e9-f54a-4911-a30d-d321e75423c2)
+![iPhone 15 Pro Portrait Left Mockup](https://github.com/user-attachments/assets/704597ac-9893-42bd-82e6-d236d42f254d)
 
-![phone1](https://github.com/user-attachments/assets/bebd6037-e318-4e78-9115-355a6be0c19c)
+![iPhone 15 Pro Mockup in Black Titanium](https://github.com/user-attachments/assets/bc21a695-4fe7-4145-8753-71ed53da112f)
 
-![phone2](https://github.com/user-attachments/assets/818cbdfd-a2f5-447c-966a-211dcd0e30e3)
+![iPhone 15 Pro Portrait Right Mockup](https://github.com/user-attachments/assets/674ec257-cbba-4daa-814c-01a56004682f)
 
-![phone4](https://github.com/user-attachments/assets/1571aaf9-f0e9-4e00-9fa1-eba22164ad42)
-
+![Floating iPhone 15 Pro Black Titanium Mockup](https://github.com/user-attachments/assets/ef0d6062-852b-48da-8a21-10204627d1f6)
 
 
 ## Tech
